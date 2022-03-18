@@ -1,0 +1,29 @@
+package Remove_LinkedList_Elements_No_203;
+
+/**
+ * @author 将晖
+ */
+
+
+public class Sum {
+
+    public static int sum(int[] arr) {
+        //计算下标从零开始的数组和
+        return sum(arr, 0);
+    }
+
+    //计算arr[l...n)这个区间内所有数字的和
+    private static int sum(int[] arr, int l) {
+        //递归终点
+        if (l == arr.length)
+            return 0;
+
+        return arr[l] + sum(arr, l + 1);
+
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8};
+        System.out.println(sum(nums));
+    }
+}
