@@ -7,7 +7,7 @@ public class BSTSet<E extends Comparable<E>> implements Set<E> {
 
     @Override
     public int getSize() {
-        return bst.getSize();
+        return bst.size();
     }
 
     @Override
