@@ -29,7 +29,7 @@ public class LinkedList<E> {
     }
 
     private Node dummyHead;     //虚拟头结点
-    int size;
+    private int size;
 
     public LinkedList() {
         dummyHead = new Node();
