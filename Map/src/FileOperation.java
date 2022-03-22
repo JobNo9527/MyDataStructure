@@ -6,6 +6,9 @@ import java.io.File;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 
+/*
+    传入文件名请传入一个相对路径
+ */
 // 文件相关操作
 public class FileOperation {
 
