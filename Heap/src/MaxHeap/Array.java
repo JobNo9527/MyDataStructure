@@ -23,6 +23,16 @@ public class Array<E> {
         this(10);
     }
 
+    // 将传来的数组返回给成员变量
+    public Array(E[] arr) {
+        data = (E[]) new Object[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            data[i] = arr[i];
+        }
+        size = arr.length;
+    }
+
+
     //获取数组中的元素个数
     public int getSize() {
         return size;
