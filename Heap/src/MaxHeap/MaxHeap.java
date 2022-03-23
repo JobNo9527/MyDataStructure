@@ -31,7 +31,7 @@ public class MaxHeap<E extends Comparable<E>> {
 
     // 返回完全二叉树的数组表示中，一个索引所表示的元素的左孩子节点的索引
     private int leftChild(int index) {
-        return index * 2 + 2;
+        return index * 2 + 1;
     }
 
     // 返回完全二叉树的数组表示中，一个索引所表示的元素的右孩子节点的索引
@@ -53,4 +53,41 @@ public class MaxHeap<E extends Comparable<E>> {
         }
     }
 
+    // 看堆中的最大元素
+    public E findMax() {
+        if (data.getSize() == 0)
+            throw new IllegalArgumentException("Can not findMax when heap is empty.");
+        return data.get(0);
+    }
+
+    // 取出堆中最大元素
+    public E extractMax() {
+
+        E ret = findMax();
+
+        data.swap(0, data.getSize() - 1);
+        data.removeLast();
+        siftDown(0);
+
+        return ret;
+    }
+
+    private void siftDown(int k) {
+
+        // 因为右孩子的索引比左孩子的索引还要大，如果左孩子的索引都越界了，右孩子的索引一定越界，也就是到了k是个叶子节点的时候了
+        while (leftChild(k) < data.getSize()) {
+
+            int j = leftChild(k);   // 此时j+1就是右孩子
+            if (j + 1 < data.getSize() && data.get(j + 1).compareTo(data.get(j)) > 0)
+                j = rightChild(k);  // j++;
+            // data[j] 是leftChild 和 rightChild中的最大值
+
+            // 下沉终止条件
+            if (data.get(k).compareTo(data.get(j)) >= 0)
+                break;
+
+            data.swap(k, j);
+            k = j;  // k下沉进行下一轮比较
+        }
+    }
 }
