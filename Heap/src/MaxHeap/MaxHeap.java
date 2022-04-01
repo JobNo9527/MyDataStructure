@@ -73,6 +73,7 @@ public class MaxHeap<E extends Comparable<E>> {
     // 取出堆中最大元素
     public E extractMax() {
 
+        // findMax中已实现堆空的情况
         E ret = findMax();
 
         data.swap(0, data.getSize() - 1);

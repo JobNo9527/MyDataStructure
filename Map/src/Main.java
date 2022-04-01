@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
 
+    // 测试基于链表的映射（字典）
     private static double testMap(Map<String, Integer> map, String filename) {
 
         long startTime = System.nanoTime();
@@ -30,7 +31,6 @@ public class Main {
         BSTMap<String, Integer> bstMap = new BSTMap<>();
         double time1 = testMap(bstMap, filename);
         System.out.println("BSTMap: " + time1 + " s");
-
 
     }
 }
