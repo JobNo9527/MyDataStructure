@@ -328,7 +328,7 @@ public class AVLTree<K extends Comparable<K>, V> {
         System.out.println("pride-and-prejudice");
 
         ArrayList<String> words = new ArrayList<>();
-        if (FileOperation.readFile("AVLTree//pride-and-prejudice.txt", words)) {
+        if (FileOperation.readFile("/Users/ayue9527/IdeaProjects/MyDataStructure/Map/pride-and-prejudice.txt", words)) {
             System.out.println("Total words: " + words.size());
 
             AVLTree<String, Integer> map = new AVLTree<>();
@@ -346,7 +346,6 @@ public class AVLTree<K extends Comparable<K>, V> {
             System.out.println("is BST : " + map.isBST());
             System.out.println("is Balanced : " + map.isBalanced());
 
-            // 判断删除后的整个AVLTree是否还符合平衡的性质和二分搜索树的性质
             for (String word : words) {
                 map.remove(word);
                 if (!map.isBST() || !map.isBalanced())

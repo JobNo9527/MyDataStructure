@@ -18,6 +18,8 @@ public class Main {
                     map.add(word, 1);
             }
             System.out.println("Total different words: " + map.getSize());
+            System.out.println("Frequency of PRIDE: " + map.get("pride"));
+            System.out.println("Frequency of PREJUDICE: " + map.get("prejudice"));
         }
         long endTime = System.nanoTime();
 
@@ -26,11 +28,22 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String filename = "D:\\Java\\IdeaProjects\\MyDataSturcture\\Map\\pride-and-prejudice.txt";
+        String filename = "Map//pride-and-prejudice.txt";
 
         BSTMap<String, Integer> bstMap = new BSTMap<>();
-        double time1 = testMap(bstMap, filename);
-        System.out.println("BSTMap: " + time1 + " s");
+        double time = testMap(bstMap, filename);
+        System.out.println("BSTMap: " + time + " s");
 
+        System.out.println();
+
+        LinkedListMap<String, Integer> linkedListMap = new LinkedListMap<>();
+        time = testMap(linkedListMap, filename);
+        System.out.println("LinkedListMap: " + time + " s");
+
+        System.out.println();
+
+        AVLMap<String, Integer> avlMap = new AVLMap<>();
+        time = testMap(avlMap, filename);
+        System.out.println("AVLMap:" + time + " s");
     }
 }

@@ -17,21 +17,27 @@ public class Main {
         }
         long endTime = System.nanoTime();
 
-        return (endTime - startTime);
+        return (endTime - startTime) / 1000000000.0;
     }
 
     public static void main(String[] args) {
 
-        String filename = "D:\\Java\\IdeaProjects\\MyDataSturcture\\Set\\pride-and-prejudice.txt";
+        String filename = "Set//pride-and-prejudice.txt";
 
         BSTSet<String> bstSet = new BSTSet<>();
-        double time1 = testSet(bstSet, filename);
-        System.out.println("BST Set: " + time1 + " s");
+        double time = testSet(bstSet, filename);
+        System.out.println("BST Set: " + time + " s");
 
         System.out.println();
 
         LinkedListSet<String> linkedListSet = new LinkedListSet<>();
-        double time2 = testSet(linkedListSet, filename);
-        System.out.println("LinkedList Set: " + time2 + " s");
+        time = testSet(linkedListSet, filename);
+        System.out.println("LinkedList Set: " + time + " s");
+
+        System.out.println();
+
+        AVLSet<String> avlSet = new AVLSet<>();
+        time = testSet(avlSet, filename);
+        System.out.println("AVL Set: " + time + " s");
     }
 }
