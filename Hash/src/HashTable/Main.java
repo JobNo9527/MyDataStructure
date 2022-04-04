@@ -73,7 +73,7 @@ public class Main {
             startTime = System.nanoTime();
 
             // HashTable<String, Integer> ht = new HashTable<>();
-            HashTable<String, Integer> ht = new HashTable<String, Integer>(131071);
+            HashTable<String, Integer> ht = new HashTable<String, Integer>();
             for (String word : words) {
                 if (ht.contains(word))
                     ht.set(word, ht.get(word) + 1);

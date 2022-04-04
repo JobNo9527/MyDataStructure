@@ -4,7 +4,7 @@ public class Main3 {
 
     public static void main(String[] args) {
 
-        int n = 1000_0000;
+        int n = 1_000_0000;
 
         ArrayList<Integer> testData = new ArrayList<>();
         for (int i = 0; i < n; i++)

@@ -1,7 +1,3 @@
-/**
- * @author 将晖
- */
-
 //泛形类
 public class Array<E> {
 
