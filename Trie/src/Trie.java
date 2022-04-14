@@ -1,3 +1,5 @@
+import java.io.BufferedInputStream;
+import java.util.Scanner;
 import java.util.TreeMap;
 
 public class Trie {
@@ -71,7 +73,7 @@ public class Trie {
         Node cur = root;
         for (int i = 0; i < prefix.length(); i++) {
             char c = prefix.charAt(i);
-            if (cur.next.get(c)==null)
+            if (cur.next.get(c) == null)
                 return false;
 
             cur = cur.next.get(c);

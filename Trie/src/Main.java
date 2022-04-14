@@ -1,4 +1,6 @@
+import java.io.BufferedInputStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -8,7 +10,7 @@ public class Main {
 
         ArrayList<String> words = new ArrayList<>();
 
-        if (FileOperation.readFile("/User/ayue9527/IdeaProjects/MyDataSturcture/Trie/src/pride-and-prejudice.txt ", words)) {
+        if (FileOperation.readFile("Trie//pride-and-prejudice.txt ", words)) {
 
             long startTime = System.nanoTime();
             BSTSet<String> set = new BSTSet<>();
@@ -24,7 +26,7 @@ public class Main {
             System.out.println("Total different words: " + set.getSize());
             System.out.println("BSTSet: " + time + " s");
 
-            // ---
+            /// ---
 
             startTime = System.nanoTime();
             Trie trie = new Trie();
@@ -39,6 +41,7 @@ public class Main {
 
             System.out.println("Total different words: " + trie.getSize());
             System.out.println("Trie: " + time + " s");
+
         }
     }
 }
